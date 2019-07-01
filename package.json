@@ -1,0 +1,19 @@
+{
+  "name": "bank-ocr",
+  "version": "1.0.0",
+  "description": "kata 0",
+  "main": "index.js",
+  "scripts": {
+    "test": "tab -b tests/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucascanna/bank-OCR.git"
+  },
+  "author": "Luca Scannapieco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucascanna/bank-OCR/issues"
+  },
+  "homepage": "https://github.com/Lucascanna/bank-OCR#readme"
+}
