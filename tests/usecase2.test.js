@@ -5,8 +5,8 @@ const tap = require('tap')
 const ocr = require('../index')
 const fs = require('fs')
 
-const useCases = glob.sync('data/use-case-1/input*.txt', { cwd: 'tests/' })
-const solutions = glob.sync('data/use-case-1/output*.txt', { cwd: 'tests/' })
+const useCases = glob.sync('data/use-case-2/input*.txt', { cwd: 'tests/' })
+const solutions = glob.sync('data/use-case-2/output*.txt', { cwd: 'tests/' })
     .map(filepath => fs.readFileSync(`tests/${filepath}`, { encoding: 'utf-8' }))
 
 useCases.forEach((useCase, index) => {
