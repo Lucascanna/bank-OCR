@@ -4,7 +4,7 @@
   "description": "kata 0",
   "main": "index.js",
   "scripts": {
-    "test": "tab -b tests/*.test.js"
+    "test": "tap -b tests/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Lucascanna/bank-OCR/issues"
   },
-  "homepage": "https://github.com/Lucascanna/bank-OCR#readme"
+  "homepage": "https://github.com/Lucascanna/bank-OCR#readme",
+  "dependencies": {
+    "glob": "^7.1.4",
+    "lodash.zip": "^4.2.0",
+    "tap": "^14.3.1"
+  }
 }
