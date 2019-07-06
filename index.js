@@ -13,7 +13,11 @@ function separateOcrDigits(ocrLines) {
 
 function fromOcrToNumber(digit) {
     const flatDigit = digit.join()
-    return digitsMap[flatDigit]
+    const number = digitsMap[flatDigit]
+    if (!number) {
+        return '?'
+    }
+    return number
 }
 
 function parseOCR(ocrLines) {
@@ -24,6 +28,9 @@ function parseOCR(ocrLines) {
 }
 
 function validateOCR(accountNumberAsString) {
+    if (accountNumberAsString.includes('?')) {
+        return `${accountNumberAsString} ILL`
+    }
     const checksum = accountNumberAsString
         .split('')
         .reverse()
