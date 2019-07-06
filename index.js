@@ -23,6 +23,18 @@ function parseOCR(ocrLines) {
         .join('')
 }
 
+function validateOCR(accountNumberAsString) {
+    const checksum = accountNumberAsString
+        .split('')
+        .reverse()
+        .map((currentNumber, currentIndex) => parseInt(currentNumber)*(currentIndex+1))
+        .reduce((total, current) => total += current, 0)
+    if (checksum % 11 !== 0) {
+        return `${accountNumberAsString} ERR`
+    }
+    return accountNumberAsString
+}
+
 function main(filename) {
     const fileLines = readFileAsArrayOfStrings(filename)
     const groupedOcrLines = fileLines.reduce((accumulator, currentLine, currentIndex, initialArray) => {
@@ -31,7 +43,10 @@ function main(filename) {
         }
         return accumulator
     }, [])
-    return groupedOcrLines.map(parseOCR).join('\n')
+    return groupedOcrLines
+        .map(parseOCR)
+        .map(validateOCR)
+        .join('\n')
 }
 
 module.exports = main
