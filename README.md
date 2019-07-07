@@ -1,5 +1,5 @@
 # bank-OCR
-Kata 0
+This repo contains a Kata exercise.
 
 ## Link to slides
 
